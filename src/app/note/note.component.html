@@ -1,0 +1,62 @@
+<app-navbar></app-navbar> 
+<app-side-bar></app-side-bar> 
+
+
+<div class="note">
+     <mat-accordion >
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Creer une note
+            </mat-panel-title>
+            <mat-panel-description>
+              Titre de la note
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <input matInput placeholder="Titre">
+          </mat-form-field>
+          <div class="example-button-row">
+              <button mat-icon-button>
+                <mat-icon svgIcon="folder"></mat-icon>
+              </button>
+          </div>
+         </mat-expansion-panel>
+</mat-accordion>
+ <mat-accordion>
+         <br>  
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Note Title
+            </mat-panel-title>
+            <mat-panel-description>
+              
+              Description
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="menu">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+            <mat-menu #menu="matMenu">
+             
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+              <button mat-menu-item >
+                <mat-icon>Archive</mat-icon>
+                <span>Archiver</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>update</mat-icon>
+                <span>modifier</span>
+              </button>
+            </mat-menu>
+        </mat-expansion-panel>
+      </mat-accordion> 
+    </div>
